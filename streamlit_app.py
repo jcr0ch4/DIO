@@ -47,7 +47,7 @@ if uploaded_file is not None:
     st.write(string_data)
 
     # Can be used wherever a "file-like" object is accepted:
-    df = pd.read_excel('../datasets/AdventureWorks.xlsx')v
+    df = pd.read_excel(upload_file)
     st.write(information(df))
 
 
