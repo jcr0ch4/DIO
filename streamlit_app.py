@@ -48,7 +48,7 @@ if uploaded_file is not None:
 
     # Can be used wherever a "file-like" object is accepted:
     df = pd.read_csv(uploaded_file,sep=';')
-    st.table(information(df))
+    st.table(information(df.as_type(str)))
 
     #Qual a Receita total?
     #Qual o custo Total?
