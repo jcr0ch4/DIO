@@ -39,12 +39,12 @@ if uploaded_file is not None:
     st.write(bytes_data)
 
     # To convert to a string based IO:
-    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
-    st.write(stringio)
+    #stringio = StringIO(uploaded_file.getvalue())
+    #st.write(stringio)
 
     # To read file as string:
-    string_data = stringio.read()
-    st.write(string_data)
+    #string_data = stringio.read()
+    #st.write(string_data)
 
     # Can be used wherever a "file-like" object is accepted:
     df = pd.read_excel(upload_file)
@@ -172,7 +172,7 @@ len(df['ID Loja'].unique())
 
 
 # Quais são as lojas ?
-df['ID Loja'].unique()
+#df['ID Loja'].unique()
 
 
 # In[ ]:
