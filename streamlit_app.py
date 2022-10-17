@@ -39,7 +39,7 @@ def information(dataset):
         
         return st.write(df_aux.astype(str))
 
-uploaded_file = st.file_uploader("Selecione o arquivo")
+uploaded_file = st.sidebar.file_uploader("Selecione o arquivo")
 if uploaded_file is not None:
     # Can be used wherever a "file-like" object is accepted:
     df = pd.read_csv(uploaded_file,sep=';')
@@ -67,8 +67,8 @@ if uploaded_file is not None:
     #Identificando o Outlier
     # Qual Loja que mais vendeu
     # Qual a quantidade de Lojas?
-    len(df['ID Loja'].unique())
+    st.sidebar.write(len(df['ID Loja'].unique()))
 
     # Quais são as lojas ?
-    df['ID Loja'].unique()
+    st.sidebar.dataframe(df['ID Loja'].unique())
 
