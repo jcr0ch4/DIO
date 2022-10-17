@@ -3,7 +3,7 @@
 
 import streamlit as st
 import pandas as pd
-
+import numpy as np
 st.title('Minha primeira aplicação :sunglasses:')
 
 def information(dataset):
@@ -30,26 +30,15 @@ def information(dataset):
         )
         df_aux['missing data percent'] = round(df_aux['missing']/df_aux['size'],2)
         df_aux['columns'] = df_aux.index
-        return df_aux
+        
+        return st.write(df_aux.astype(str))
 
 uploaded_file = st.file_uploader("Selecione o arquivo")
 if uploaded_file is not None:
-    # To read file as bytes:
-    bytes_data = uploaded_file.getvalue()
-    st.write(bytes_data)
-
-    # To convert to a string based IO:
-    #stringio = StringIO(uploaded_file.getvalue())
-    #st.write(stringio)
-
-    # To read file as string:
-    #string_data = stringio.read()
-    #st.write(string_data)
-
     # Can be used wherever a "file-like" object is accepted:
     df = pd.read_csv(uploaded_file,sep=';')
-    st.table(information(df.astype(str)))
-
+    st.write(df.head(10))
+    information(df)
     #Qual a Receita total?
     #Qual o custo Total?
     #Agora que temos a receita e custo e o total, podemos achar o Lucro total
