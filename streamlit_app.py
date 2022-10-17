@@ -48,7 +48,7 @@ if uploaded_file is not None:
 
     # Can be used wherever a "file-like" object is accepted:
     df = pd.read_excel(upload_file)
-    st.write(information(df))
+    st.dataframe(information(df))
 
     #Qual a Receita total?
     #Qual o custo Total?
