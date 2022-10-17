@@ -4,13 +4,13 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-st.image(
+st.sidebar.image(
          'https://hermes.digitalinnovation.one/assets/diome/logo-minimized.png'
         )
-st.title('Analise Exploratória de Dados ( EDA ) :sunglasses:')
+st.sidebar.markdown('## Analise Exploratória de Dados ( EDA ) :sunglasses:')
 
-st.sidebar.title("Select Visual Charts")
-st.sidebar.markdown("Select the Charts/Plots accordingly:")
+#st.sidebar.title("Select Visual Charts")
+#st.sidebar.markdown("Select the Charts/Plots accordingly:")
 
 def information(dataset):
         '''
