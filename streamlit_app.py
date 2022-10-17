@@ -50,134 +50,29 @@ if uploaded_file is not None:
     df = pd.read_excel(upload_file)
     st.write(information(df))
 
-
-
-
-#Qual a Receita total?
-
-
-# In[10]:
-
-
-#Qual o custo Total?
-
-
-# In[11]:
-
-
-#Agora que temos a receita e custo e o total, podemos achar o Lucro total
-#Vamos criar uma coluna de Lucro que será Receita - Custo
-
-
-# In[12]:
-
-
-#Total Lucro
-
-
-# In[13]:
-
-
-#Criando uma coluna com total de dias para enviar o produto
-
-
-# In[14]:
-
-
-#Extraindo apenas os dias
-
-
-# In[15]:
-
-
-#Verificando o tipo da coluna Tempo_envio
-
-
-# In[16]:
-
-
-#Média do tempo de envio por Marca
-
-
-# In[18]:
-
-
-#Verificando se temos dados faltantes
-
-
-# **E, se a gente quiser saber o Lucro por Ano e Por Marca?**
-
-# In[19]:
-
-
-#Vamos Agrupar por ano e marca
-
-
-# In[20]:
-
-
-#Resetando o index
-
-
-# In[21]:
-
-
-#Qual o total de produtos vendidos?
-
-
-# In[22]:
-
-
-#Gráfico Total de produtos vendidos
-
-
-# In[23]:
-
-
-#Selecionando apenas as vendas de 2009
-
-
-# In[24]:
-
-
-#Tempo mínimo de envio
-
-
-# In[25]:
-
-
-#Tempo máximo de envio
-
-
-# In[26]:
-
-
-#Identificando o Outlier
-
-
-# In[27]:
-
-
-# Qual Loja que mais vendeu
-
-
-# In[31]:
-
-
-# Qual a quantidade de Lojas?
-len(df['ID Loja'].unique())
-
-
-# In[32]:
-
-
-# Quais são as lojas ?
-#df['ID Loja'].unique()
-
-
-# In[ ]:
-
-
-
-
+    #Qual a Receita total?
+    #Qual o custo Total?
+    #Agora que temos a receita e custo e o total, podemos achar o Lucro total
+    #Vamos criar uma coluna de Lucro que será Receita - Custo
+    #Total Lucro
+    #Criando uma coluna com total de dias para enviar o produto
+    #Extraindo apenas os dias
+    #Verificando o tipo da coluna Tempo_envio
+    #Média do tempo de envio por Marca
+    #Verificando se temos dados faltantes
+    # **E, se a gente quiser saber o Lucro por Ano e Por Marca?**
+    #Vamos Agrupar por ano e marca
+    #Resetando o index
+    #Qual o total de produtos vendidos?
+    #Gráfico Total de produtos vendidos
+    #Selecionando apenas as vendas de 2009
+     #Tempo mínimo de envio
+    #Tempo máximo de envio
+    #Identificando o Outlier
+    # Qual Loja que mais vendeu
+    # Qual a quantidade de Lojas?
+    len(df['ID Loja'].unique())
+
+    # Quais são as lojas ?
+    df['ID Loja'].unique()
 
