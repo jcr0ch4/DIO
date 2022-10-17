@@ -4,7 +4,9 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-st.image('https://hermes.digitalinnovation.one/assets/diome/logo-minimized.png', format='PNG')
+st.image(
+         'https://hermes.digitalinnovation.one/assets/diome/logo-minimized.png',format='PGN'
+        )
 st.title('Analise Exploratória de Dados ( EDA ) :sunglasses:')
 
 st.sidebar.title("Select Visual Charts")
