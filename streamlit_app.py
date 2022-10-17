@@ -5,7 +5,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 st.image(
-         'https://hermes.digitalinnovation.one/assets/diome/logo-minimized.png',format='PGN'
+         'https://hermes.digitalinnovation.one/assets/diome/logo-minimized.png'
         )
 st.title('Analise Exploratória de Dados ( EDA ) :sunglasses:')
 
