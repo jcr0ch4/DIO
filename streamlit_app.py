@@ -4,7 +4,11 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-st.title('Minha primeira aplicação :sunglasses:')
+st.image('https://hermes.digitalinnovation.one/assets/diome/logo-minimized.png', format='PNG')
+st.title('Analise Exploratória de Dados ( EDA ) :sunglasses:')
+
+st.sidebar.title("Select Visual Charts")
+st.sidebar.markdown("Select the Charts/Plots accordingly:")
 
 def information(dataset):
         '''
@@ -37,7 +41,8 @@ uploaded_file = st.file_uploader("Selecione o arquivo")
 if uploaded_file is not None:
     # Can be used wherever a "file-like" object is accepted:
     df = pd.read_csv(uploaded_file,sep=';')
-    st.write(df.head(10))
+
+    st.dataframe(df)
     information(df)
     #Qual a Receita total?
     #Qual o custo Total?
