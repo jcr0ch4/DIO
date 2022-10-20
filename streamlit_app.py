@@ -85,6 +85,9 @@ if uploaded_file is not None:
     st.altair_chart(barras, use_container_width=True)
     #st.write(str( locale.getlocale() ))
     #locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
+    # Transformacao em Float
+    df['Valor Venda'] = df['Valor Venda'].astype(float)
+    df['No. Venda'] = df['No. Venda'].astype(float)
     st.write("Valor de Venda : {}".format(df['Valor Venda'].sum()))
     st.write("Quantidade de Vendas : {} ".format(df['No. Venda'].count()))
     valor_venda_all = df['Valor Venda'].sum()
