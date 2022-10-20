@@ -44,8 +44,6 @@ if uploaded_file is not None:
     # Can be used wherever a "file-like" object is accepted:
     df = pd.read_csv(uploaded_file,sep=';')
 
-    st.dataframe(df)
-    information(df)
     #Qual a Receita total?
     #Qual o custo Total?
     #Agora que temos a receita e custo e o total, podemos achar o Lucro total
@@ -67,8 +65,11 @@ if uploaded_file is not None:
     #Identificando o Outlier
     # Qual Loja que mais vendeu
     # Qual a quantidade de Lojas?
-    st.sidebar.write(len(df['ID Loja'].unique()))
+    st.sidebar.write("Número de Lojas analisadas: {}".format(len(df['ID Loja'].unique()))) 
+    #
+    st.subheader("Informações do Dataset: {}".format(uploaded_file))
+    information(df)
 
-    # Quais são as lojas ?
-    st.sidebar.dataframe(df['ID Loja'].unique())
+    st.subheader("Amostra dos dados do Dataset: {}".format(uploaded_file))
+    st.dataframe(df)
 
