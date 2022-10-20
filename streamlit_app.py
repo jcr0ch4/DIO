@@ -5,7 +5,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import altair as alt
-
+import locale
 
 
 st.sidebar.image(
@@ -83,3 +83,7 @@ if uploaded_file is not None:
     )
  
     st.altair_chart(barras, use_container_width=True)
+    st.write("Quantidade de Vendas : {}".format(df['No. Venda'].count()))
+    locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
+    valor = locale.currency(df['Valor Venda'].sum()/df['No. Venda'].count() ,grouping=True)
+    st.write("Ticket Médio : R$ {:.2f}".format(valor))
