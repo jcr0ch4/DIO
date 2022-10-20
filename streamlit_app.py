@@ -72,4 +72,4 @@ if uploaded_file is not None:
 
     st.subheader("Amostra dos dados do Dataset")
     st.dataframe(df)
-    st.bar_chart(df[['Produto','Valor Venda']])
+    st.bar_chart(df['Produto'],df['Valor Venda'])
