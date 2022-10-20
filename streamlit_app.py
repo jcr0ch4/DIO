@@ -73,7 +73,7 @@ if uploaded_file is not None:
     st.subheader("Amostra dos dados do Dataset")
     st.dataframe(df)
 #   st.bar_chart(df['Produto'],df['Valor Venda'])
-    barras = alt.Chart(df).mark_bar().encode(
+    barras = altair.Chart(df).mark_bar().encode(
         y='Valor Venda:Q',
         x='Produto:O',
     )
