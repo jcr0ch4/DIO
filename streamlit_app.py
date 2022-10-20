@@ -4,6 +4,10 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import altair as alt
+
+
+
 st.sidebar.image(
          'https://hermes.digitalinnovation.one/assets/diome/logo-minimized.png'
         )
@@ -73,7 +77,7 @@ if uploaded_file is not None:
     st.subheader("Amostra dos dados do Dataset")
     st.dataframe(df)
 #   st.bar_chart(df['Produto'],df['Valor Venda'])
-    barras = altair.Chart(df).mark_bar().encode(
+    barras = alt.Chart(df).mark_bar().encode(
         y='Valor Venda:Q',
         x='Produto:O',
     )
