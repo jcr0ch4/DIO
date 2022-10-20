@@ -86,5 +86,7 @@ if uploaded_file is not None:
     st.write("Quantidade de Vendas : {}".format(df['No. Venda'].count()))
     #st.write(str( locale.getlocale() ))
     #locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
-    valor = locale.currency(df['Valor Venda'].sum()/df['No. Venda'].count() ,grouping=True)
-    st.write("Ticket Médio : R$ {:.2f}".format(valor))
+    valor_venda_all = df['Valor Venda'].sum()
+    total_venda = df['No. Venda'].count()
+    ticket_medio = valor_venda_all / total_venda
+    st.write("Ticket Médio : R$ {:.2f}".format(local.curency(ticket_medio, grouping=True)))
