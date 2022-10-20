@@ -39,7 +39,7 @@ def information(dataset):
         
         return st.write(df_aux.astype(str))
 
-uploaded_file = st.sidebar.file_uploader("Selecione o arquivo")
+uploaded_file = st.sidebar.file_uploader("Selecione o arquivo: ")
 if uploaded_file is not None:
     # Can be used wherever a "file-like" object is accepted:
     df = pd.read_csv(uploaded_file,sep=';')
@@ -67,9 +67,9 @@ if uploaded_file is not None:
     # Qual a quantidade de Lojas?
     st.sidebar.write("Número de Lojas analisadas: {}".format(len(df['ID Loja'].unique()))) 
     #
-    st.subheader("Informações do Dataset: {}".format(uploaded_file))
+    st.subheader("Informações do Dataset")
     information(df)
 
-    st.subheader("Amostra dos dados do Dataset: {}".format(uploaded_file))
+    st.subheader("Amostra dos dados do Dataset")
     st.dataframe(df)
-
+    st.bar_chart(df['Valor Venda'])
