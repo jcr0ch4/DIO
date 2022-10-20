@@ -90,5 +90,6 @@ if uploaded_file is not None:
     valor_venda_all = df['Valor Venda'].sum()
     total_venda = df['No. Venda'].count()
     st.write("Tipo de Valor Venda : {}, Valor : {} | Tipo No. Venda : {}, Valor : {}".format(total_venda,total_venda,valor_venda_all,valor_venda_all))
-    ticket_medio = float(valor_venda_all / total_venda)
     st.write("Ticket Médio : {}".format(locale.currency(df['Valor Venda'].sum()/df['No. Venda'].count(),grouping=True)))
+   # ticket_medio = float(valor_venda_all / total_venda)
+    
