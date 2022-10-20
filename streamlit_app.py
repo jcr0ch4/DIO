@@ -86,6 +86,8 @@ if uploaded_file is not None:
     st.write("Quantidade de Vendas : {}".format(df['No. Venda'].count()))
     #st.write(str( locale.getlocale() ))
     #locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
+    st.write("Valor de Venda : {}".format(df['Valor Venda'].sum())
+    st.write("Quantidade de Vendas : {} ".format(df['No. Venda'].count())
     valor_venda_all = df['Valor Venda'].sum()
     total_venda = df['No. Venda'].count()
     st.write("Tipo de Valor Venda : {}, Valor : {} | Tipo No. Venda : {}, Valor : {}".format(total_venda,total_venda,valor_venda_all,valor_venda_all))
