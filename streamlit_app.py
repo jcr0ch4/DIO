@@ -82,4 +82,4 @@ if uploaded_file is not None:
         x='Produto:O',
     )
  
-    st.altair_chart(bar_chart, use_container_width=True)
+    st.altair_chart(barras, use_container_width=True)
