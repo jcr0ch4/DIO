@@ -86,7 +86,7 @@ if uploaded_file is not None:
     #st.write(str( locale.getlocale() ))
     #locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
     # Transformacao em Float
-    df['Valor Venda'] = df['Valor Venda'].astype(float)
+    df['Valor Venda'] = pd.to_numeric(df['Valor Venda'],errors='coerce')
     df['No. Venda'] = df['No. Venda'].astype(float)
     st.write("Valor de Venda : {}".format(df['Valor Venda'].sum()))
     st.write("Quantidade de Vendas : {} ".format(df['No. Venda'].count()))
