@@ -96,7 +96,7 @@ if uploaded_file is not None:
     df['Dia Semana Venda']= pd.DatetimeIndex(df['Data Venda']).dayofweek
 
     # lead time
-    df['LeadTime'] = (df['Data Envio'] - df['Data Venda']).dt.days
+    df['LeadTime'] = (df['Data Envio']-df['Data Venda']).dt.days
 
     # Custo
     df['Custo Total'] = df['Custo Unitário'].mul(df['Quantidade'])
