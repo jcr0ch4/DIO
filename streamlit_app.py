@@ -93,5 +93,38 @@ if uploaded_file is not None:
     total_venda = df['No. Venda'].count()
     st.write("Tipo de Valor Venda : {}, Valor : {} | Tipo No. Venda : {}, Valor : {}".format(total_venda,total_venda,valor_venda_all,valor_venda_all))
     st.write("Ticket Médio : {}".format(locale.currency(df['Valor Venda'].sum()/df['No. Venda'].count(),grouping=True)))
+    # Transformação de Objeto em Data
+    #df['Data Venda'] = pd.to_datetime(df['Data Venda'])
+
+    # Ano Venda
+    df['Ano Venda']= pd.DatetimeIndex(df['Data Venda']).year
+
+    # Mes Venda
+    df['Mes Venda']= pd.DatetimeIndex(df['Data Venda']).month
+
+    # Dia da Semana
+    df['Dia Semana Venda']= pd.DatetimeIndex(df['Data Venda']).dayofweek
+
+    # lead time
+    df['LeadTime'] = (df['Data Envio'] - df['Data Venda']).dt.days
+
+    # Custo
+    df['Custo Total'] = df['Custo Unitário'].mul(df['Quantidade'])
+
+    # Lucro
+    df['Lucro Total'] = df['Valor Venda'] - df['Custo Total']
+    # Transformando Valor Monetário em float
+    # ( Funciona no Jupyter, mas não funciona no Streamlit )
+    df['Valor Venda'] = df['Valor Venda'].astype('float')
+    #df['Valor Venda'] = df['Valor Desconto'].astype('float')
+    #df['Valor Venda'] = pd.to_numeric(df['Valor Venda'],errors='coerce')
+
+    # Funciona no Jupyter e no Streamlit
+    #df['Valor Venda'] = pd.to_numeric(df['Valor Venda'],errors='coerce')
+    df['Valor Desconto'] = pd.to_numeric(df['Valor Desconto'],errors='coerce')
+
+
+    df['Custo Unitário'] = df['Custo Unitário'].astype('float')
+    df['Preço Unitário'] = df['Preço Unitário'].astype('float')
    # ticket_medio = float(valor_venda_all / total_venda)
     
