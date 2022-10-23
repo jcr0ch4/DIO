@@ -86,16 +86,6 @@ if uploaded_file is not None:
     #st.write(str( locale.getlocale() ))
     #locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
     # Transformacao em Float
-    df['Valor Venda'] = pd.to_numeric(df['Valor Venda'],errors='coerce')
-    st.write("Valor de Venda : {}".format(df['Valor Venda'].sum()))
-    st.write("Quantidade de Vendas : {} ".format(df['No. Venda'].count()))
-    valor_venda_all = df['Valor Venda'].sum()
-    total_venda = df['No. Venda'].count()
-    st.write("Tipo de Valor Venda : {}, Valor : {} | Tipo No. Venda : {}, Valor : {}".format(total_venda,total_venda,valor_venda_all,valor_venda_all))
-    st.write("Ticket Médio : {}".format(locale.currency(df['Valor Venda'].sum()/df['No. Venda'].count(),grouping=True)))
-    # Transformação de Objeto em Data
-    #df['Data Venda'] = pd.to_datetime(df['Data Venda'])
-
     # Ano Venda
     df['Ano Venda']= pd.DatetimeIndex(df['Data Venda']).year
 
@@ -127,4 +117,17 @@ if uploaded_file is not None:
     df['Custo Unitário'] = df['Custo Unitário'].astype('float')
     df['Preço Unitário'] = df['Preço Unitário'].astype('float')
    # ticket_medio = float(valor_venda_all / total_venda)
+    
+
+
+    #f['Valor Venda'] = pd.to_numeric(df['Valor Venda'],errors='coerce')
+    st.write("Valor de Venda : {}".format(df['Valor Venda'].sum()))
+    st.write("Quantidade de Vendas : {} ".format(df['No. Venda'].count()))
+    valor_venda_all = df['Valor Venda'].sum()
+    total_venda = df['No. Venda'].count()
+    st.write("Tipo de Valor Venda : {}, Valor : {} | Tipo No. Venda : {}, Valor : {}".format(total_venda,total_venda,valor_venda_all,valor_venda_all))
+    st.write("Ticket Médio : {}".format(locale.currency(df['Valor Venda'].sum()/df['No. Venda'].count(),grouping=True)))
+    # Transformação de Objeto em Data
+    #df['Data Venda'] = pd.to_datetime(df['Data Venda'])
+
     
