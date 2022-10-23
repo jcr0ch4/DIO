@@ -71,21 +71,7 @@ if uploaded_file is not None:
     # Qual a quantidade de Lojas?
     st.sidebar.write("Número de Lojas analisadas: {}".format(len(df['ID Loja'].unique()))) 
     #
-    st.subheader("Informações do Dataset")
-    information(df)
 
-    st.subheader("Amostra dos dados do Dataset")
-    st.dataframe(df)
-#   st.bar_chart(df['Produto'],df['Valor Venda'])
-    barras = alt.Chart(df).mark_bar().encode(
-        y='Valor Venda:Q',
-        x='Produto:O',
-    )
- 
-    st.altair_chart(barras, use_container_width=True)
-    #st.write(str( locale.getlocale() ))
-    #locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
-    # Transformacao em Float
     # transformando data
     df['Data Envio'] = pd.to_datetime(df['Data Envio'])
     df['Data Venda'] = pd.to_datetime(df['Data Venda'])
@@ -120,6 +106,23 @@ if uploaded_file is not None:
     df['Custo Unitário'] = df['Custo Unitário'].astype('float')
     df['Preço Unitário'] = df['Preço Unitário'].astype('float')
    # ticket_medio = float(valor_venda_all / total_venda)
+
+
+    st.subheader("Informações do Dataset")
+    information(df)
+
+    st.subheader("Amostra dos dados do Dataset")
+    st.dataframe(df)
+#   st.bar_chart(df['Produto'],df['Valor Venda'])
+    barras = alt.Chart(df).mark_bar().encode(
+        y='Valor Venda:Q',
+        x='Produto:O',
+    )
+ 
+    st.altair_chart(barras, use_container_width=True)
+    #st.write(str( locale.getlocale() ))
+    #locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
+    # Transformacao em Float
     
 
 
