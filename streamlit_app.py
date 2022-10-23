@@ -86,6 +86,9 @@ if uploaded_file is not None:
     #st.write(str( locale.getlocale() ))
     #locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
     # Transformacao em Float
+    # transformando data
+    df['Data Envio'] = pd.to_datetime(df['Data Envio'])
+    df['Data Venda'] = pd.to_datetime(df['Data Venda'])
     # Ano Venda
     df['Ano Venda']= pd.DatetimeIndex(df['Data Venda']).year
 
